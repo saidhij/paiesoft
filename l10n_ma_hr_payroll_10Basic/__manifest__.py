@@ -23,8 +23,8 @@
     'category': 'Payroll',
     'author': 'paiesoft.pro',
     'website': 'http://paiesoft.pro',
-    "license": "AGPL-3",
-    'version': '1.12Basic',
+
+    'version': '1.13Basic',
     'depends': ['hr_payroll'],
     
 	
