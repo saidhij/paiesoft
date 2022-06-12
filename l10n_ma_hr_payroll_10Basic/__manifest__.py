@@ -21,8 +21,8 @@
 {
     'name': 'Morocco-payroll Basic',
     'category': 'Payroll',
-    'author': 'paiesoft.pro',
-    'website': 'http://paiesoft.pro',
+    'author': 'soffordoc@gmail.com',
+    'website': 'http://paiesoft.casa',
     'version': '1.12Basic',
     'depends': ['hr_payroll'],
     
