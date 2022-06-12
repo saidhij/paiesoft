@@ -21,7 +21,7 @@
 {
     'name': 'Morocco-payroll Basic',
     'category': 'Payroll',
-    'author': 'softfordoc@gmail.com',
+    'author': 'soffordoc@gmail.com',
     'website': 'http://paiesoft.casa',
 
     'version': '1.13Basic',
