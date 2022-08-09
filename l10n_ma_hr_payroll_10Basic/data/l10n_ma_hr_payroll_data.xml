@@ -167,23 +167,23 @@
 	
 	  <!-- Contribution Register -->
 
-    <record id="hr_CNSS_register" model="hr.contribution.register">
+    <record id="hr_CNSS_register" model="res.partner">
         <field name="name">La Caisse Nationale de Sécurité Sociale</field>
     </record>
 
-   <record id="hr_retraite_register" model="hr.contribution.register">
+   <record id="hr_retraite_register" model="res.partner">
         <field name="name">Organisme de retraite complementaire CIMR</field>
     </record>
 
-    <record id="hr_cci_register" model="hr.contribution.register">
+    <record id="hr_cci_register" model="res.partner">
         <field name="name">Chambre du commerce et de l'industrie</field>
     </record>
 
-    <record id="hr_prevoyance_register" model="hr.contribution.register">
+    <record id="hr_prevoyance_register" model="res.partnerr">
         <field name="name">Organisme de Mutuelle et prévoyance</field>
     </record>
 	
-	 <record id="hr_prime__register" model="hr.contribution.register">
+	 <record id="hr_prime__register" model="res.partner">
             <field name="name">les primes</field>
         </record>
 	
@@ -250,7 +250,7 @@
         <field name="amount_select">percentage</field>
         <field name="amount_percentage">8.98</field>
         <field name="amount_percentage_base">min(categories.BRUT,contract.employee_id.company_id.plafond_secu)</field>
-        <field name="register_id" ref="hr_CNSS_register"/>
+        <field name="partner_id" ref="hr_CNSS_register"/>
 		<field name="appears_on_payslip" eval="False"/>
     </record>
 	
@@ -264,7 +264,7 @@
         <field name="amount_percentage">2.26</field>
         <field name="amount_percentage_base">categories.BRUT</field>
         <field name="appears_on_payslip" eval="True"/>
-        <field name="register_id" ref="hr_CNSS_register"/>
+        <field name="partner_id" ref="hr_CNSS_register"/>
 	    </record>
 
     <record id="hr_payroll_rules_AMO_employer" model="hr.salary.rule">
@@ -277,7 +277,7 @@
         <field name="amount_select">percentage</field>
         <field name="amount_percentage">2.26</field>
         <field name="amount_percentage_base">categories.BRUT</field>
-        <field name="register_id" ref="hr_CNSS_register"/>
+        <field name="partner_id" ref="hr_CNSS_register"/>
 		<field name="appears_on_payslip" eval="False"/>
     </record>
 	
@@ -291,7 +291,7 @@
         <field name="amount_select">percentage</field>
         <field name="amount_percentage">1.85</field>
         <field name="amount_percentage_base">categories.BRUT</field>
-        <field name="register_id" ref="hr_CNSS_register"/>
+        <field name="partner_id" ref="hr_CNSS_register"/>
 		<field name="appears_on_payslip" eval="False"/>
     </record>
 	<record id="hr_payroll_rules_frais_pro" model="hr.salary.rule">
@@ -304,7 +304,7 @@
         <field name="amount_percentage">1.6</field>
         <field name="amount_percentage_base">categories.BRUT</field>
         <field name="appears_on_payslip" eval="False"/>
-        <field name="register_id" ref="hr_CNSS_register"/>
+        <field name="partner_id" ref="hr_CNSS_register"/>
         </record>
 		
 	<record id="hr_payroll_rules_alloc_fam" model="hr.salary.rule">
@@ -317,7 +317,7 @@
         <field name="amount_percentage">6.4</field>
         <field name="amount_percentage_base">categories.BRUT</field>
         <field name="appears_on_payslip" eval="False"/>
-        <field name="register_id" ref="hr_CNSS_register"/>
+        <field name="partner_id" ref="hr_CNSS_register"/>
         </record>	
 		
 	
