@@ -238,7 +238,7 @@
         <field name="amount_percentage">4.48</field>
         <field name="amount_percentage_base">min(categories.BRUT,contract.employee_id.company_id.plafond_secu)</field>
         <field name="appears_on_payslip" eval="True"/>
-        <field name="register_id" ref="hr_CNSS_register"/>
+        <field name="partner_id" ref="hr_CNSS_register"/>
     </record> 
 	 <record id="hr_payroll_rules_CNSS_employer" model="hr.salary.rule">
         <field name="category_id" ref="hr_payroll.COMP"/>
