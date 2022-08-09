@@ -539,18 +539,18 @@ else -0)
         <field name="condition_select">none</field>
         <field name="amount_select">code</field>
         <field name="amount_python_compute">result = categories.BRUT + categories.COMP</field>
-		<field name="note">le coût total de l'entreprise qui est la somme du salaire brut et les cotistaions patronales. </field>
+		<field name="note">le coût total de l'entreprise qui est la somme du salaire brut et les cotisations patronales. </field>
     </record>
 	
 	
 	 
 	 <record id="hr_payroll_salary_structure_base" model="hr.payroll.structure">
         <field name="code">Ma-Base-</field>
-        <field name="name">Cotisations de base paie Marocaine</field>
+        <field name="name">Paie Marocaine - Version gratuite pour test</field>
         <field eval="[(6, 0, [ref('hr_payroll.hr_rule_basic'),ref('hr_salary_rule_av_sal'),ref('hr_payroll_rules_C1_employer'),ref('hr_payroll_rules_AMO_employe'),ref('hr_payroll_rules_AMO_employer'),ref('hr_payroll_rules_frpro'),ref('hr_payroll_rules_TRANCHE'),ref('hr_rule_basic_hor'), ref('hr_payroll_rules_MARIE'), ref('hr_rule_taxable'), ref('hr_payroll_rules_ENF1'),ref('hr_payroll_rules_frais_pro'),ref('hr_payroll_rules_alloc_fam'), ref('hr_rule_net'), ref('hr_rule_secu') , ref('hr_rule_total'), ref('hr_rule_total_charges_salariales'), ref('hr_rule_total_retenues'), ref('hr_rule_cumul_imposable'), ref('hr_rule_total_charges_patronales'),ref('hr_rule_total_deductionimpot'), ref('hr_payroll_rules_CNSS1'), ref('hr_rule_cumul_imposableannuel'), ref('hr_rule_cumul_impo_apres_ded'), ref('hr_rule_IRPP'),ref('hr_rule_basic_absence')])]" name="rule_ids"/>
         <field name="company_id" ref="base.main_company"/>
         <field name="parent_id" ref="hr_payroll.structure_base"/>
-		<field name="note">Cette rubrique représente la structure des employés marocains.</field>
+		<field name="note">Cette rubrique représente la structure de la paie marocaine.</field>
    </record>
 	
 	   </data>
