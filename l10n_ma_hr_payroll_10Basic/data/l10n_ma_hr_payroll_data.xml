@@ -179,7 +179,7 @@
         <field name="name">Chambre du commerce et de l'industrie</field>
     </record>
 
-    <record id="hr_prevoyance_register" model="res.partnerr">
+    <record id="hr_prevoyance_register" model="res.partner">
         <field name="name">Organisme de Mutuelle et prévoyance</field>
     </record>
 	
