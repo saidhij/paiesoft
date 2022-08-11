@@ -1,2 +1,2 @@
 # paiesoft
-Odoo v12 -V13 Moroccan payroll
+Odoo V14 Moroccan payroll - Entreprise
