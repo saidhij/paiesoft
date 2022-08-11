@@ -1,35 +1,32 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing det
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+
+from odoo import fields, models
 
 
-from odoo import fields, models,api
-from odoo.addons import decimal_precision as dp
-from odoo.tools.translate import _
-from odoo.exceptions import UserError
-	
-class hr_contract(models.Model):
-    _inherit = 'hr.contract'
-
-	
-    
-		
-		
-class res_company(models.Model):
+class ResCompany(models.Model):
     _inherit = 'res.company'
-    _name = 'res.company'
-   
-    plafond_secu = fields.Float(string="Plafond de la Securite Sociale", required=True, default=6000)
-    nombre_employes = fields.Integer(string="Nombre d'employes")
-    cotisation_prevoyance = fields.Float(string="Cotisation Patronale Prevoyance")
-    org_ss = fields.Char(string="Organisme de sécurite sociale")
+
+    plafond_secu = fields.Float(string="Plafond de la Sécurité Sociale", required=True, default=6000)
+    nombre_employes = fields.Integer(string="Nombre d’employés")
+    cotisation_prevoyance = fields.Float(string="Cotisation Patronale")
+    org_ss = fields.Char(string="Organisme de sécurité sociale")
     conv_coll = fields.Char(string="Convention collective")
 
-class hr_payslip(models.Model):
+
+class HrContract(models.Model):
+    _inherit = 'hr.contract'
+
+    qualif = fields.Char(string='Qualification')
+    niveau = fields.Char()
+    coef = fields.Char(string='Coefficient')
+
+
+class HrPayslip(models.Model):
     _inherit = 'hr.payslip'
 
-    
-    payment_mode = fields.Char('Mode de paiement', required=False)
-  
+    payment_mode = fields.Char(string='Mode de paiement')
+
 
 class hr_employee(models.Model):
     _inherit = 'hr.employee'
@@ -47,12 +44,3 @@ class hr_employee(models.Model):
     hs100 = fields.Integer(string="Heures sup à 100",default=0)
     av_sal = fields.Integer(string="Avance sur Salaire",default=0)   
     rem_mut = fields.Integer(string="Remboursement Mutuelle",default=0)
-   	
-	
-    
-		
-
-		
-		
-		
-	
