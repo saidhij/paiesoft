@@ -1,4 +1,4 @@
 Moroccan Payroll for Odoo
 -------------------
 
-Basic Version.
+Basic Version. for odoo entreprise sh
