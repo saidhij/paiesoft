@@ -17,7 +17,7 @@
     <!-- HR SALARY RULES-->
     <function model="hr.salary.rule" name="write">
         <value model="hr.salary.rule" search="[
-            ('struct_id', '=', ref('l10n_ma_hr_payroll_basic.hr_payroll_salary_structure_employe_mensuel')),
+            ('struct_id', '=', ref('l10n_ma_hr_payroll_10Basic.hr_payroll_salary_structure_employe_mensuel')),
             ('code', '=', 'BASIC')]"/>
         <value eval="{
             'code': 'BASE',
@@ -26,7 +26,7 @@
 
     <function model="hr.salary.rule" name="write">
         <value model="hr.salary.rule" search="[
-            ('struct_id', '=', ref('l10n_ma_hr_payroll_basic.hr_payroll_salary_structure_employe_mensuel')),
+            ('struct_id', '=', ref('l10n_ma_hr_payroll_10Basic.hr_payroll_salary_structure_employe_mensuel')),
             ('code', '=', 'GROSS')]"/>
         <value eval="{
             'name': 'Salaire Brut',
@@ -371,7 +371,7 @@ else -0)
 
     <function model="hr.salary.rule" name="write">
         <value model="hr.salary.rule" search="[
-            ('struct_id', '=', ref('l10n_ma_hr_payroll_basic.hr_payroll_salary_structure_employe_mensuel')),
+            ('struct_id', '=', ref('l10n_ma_hr_payroll_10Basic.hr_payroll_salary_structure_employe_mensuel')),
             ('code', '=', 'NET')]"/>
         <value eval="{
             'name': 'Net',
