@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hr_cnss_tree_view" model="ir.ui.view">
+            <field name="name">daman_tree_view</field>
+            <field name="model">hr.cnss</field>
+            <field name="arch" type="xml">
+                <tree name="Préétabli Damancom">
+				 <field name="name"/>
+				 <field name="month"/>
+				   <field name="L_Raison_SocialeA01"/>
+                   <field name="N_Num_AffilieA01"/>
+                    <field name="L_PeriodeA01"/>	
+	                <field name="D_Date_ExigA01"/>
+                 				
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_cnss_form_view" model="ir.ui.view">
+            <field name="name">hr.cnss.form.view</field>
+            <field name="model">hr.cnss</field>
+            <field name="arch" type="xml">
+                <form name="Préétabli Damancom">
+                    <header>
+                        <button string="Confirmer" name="cnss_confirm" type="object" attrs="{'invisible': [('state','not in',('draft'))]}" class="oe_highlight"/>
+                        <button string="Etat Déclaré" name="cnss_payed" type="object" attrs="{'invisible': [('state','not in',('waiting'))]}" class="oe_highlight"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <center>
+					<div>
+                        <h2>
+                            
+							<field name="name" class="oe_inline" readonly="1"/>
+
+                        </h2>
+						</div></center>
+
+                          <field name="company_id" groups="base.group_multi_company"/>
+						   
+						<Table >
+
+						<tr> <td style="height:40px;font-size: 120%; "><strong>Période à déclarer: <field name="L_PeriodeA01" /></strong></td></tr>
+						
+						<tr>
+						<td style="height:40px;font-size: 120%"><strong>Nous sommes le : <field name="date_document"/> </strong></td> </tr>
+						<tr>
+						<td style="height:40px;font-size: 120%"><strong>Date d'exigence: <field name="D_Date_ExigA01" /></strong></td> </tr>
+						
+					    <tr>
+                        <td><strong>Raison Sociale: <field name="L_Raison_SocialeA01"/></strong></td>
+						</tr>
+						<tr>
+						<td><strong>Ville: <field name="L_VilleA01" /></strong></td>
+						</tr>
+						<tr>
+						<td><strong>N° CNSS: <field name="N_Num_AffilieA01"/></strong></td>
+						</tr>
+						<tr>
+					    <td><strong>Effectif: <field name="nemploye" /></strong></td>
+							</tr>
+					</Table>
+
+                        <notebook>
+                            <page string="Lignes du Préétabli">
+							      <group  col="4">
+                                    <field name="ebdsfile"/>
+									 <field name="ebdsfile_name" invisible="1" />
+                                   <newline  style="line-height:10px;"/>
+                              <button string="Importer les données du fichier ebds" name="parse_ebds" type="object" states="draft,waiting" class="oe_highlight"/>
+                                
+								</group>
+                     <field name="cnss_lines" colspan="4" nolabel="1" readonly="1">
+                     <tree string="LINES" >
+                     <field name="cnss_id" invisible="1"/>
+					  <field name="L_Type_Enreg"/> 
+					 <field name="N_Num_Affilie"/>
+                     <field name="L_Periode"/>
+                     <field name="N_Num_Assure"/>
+                     <field name="L_Nom"/>					 
+                     <field name="L_Prenom"/>
+                     <field name="N_Enfants"/>
+                     <field name="N_AF_A_Payer"/>
+                     <field name="N_AF_A_Deduire"/>
+					 <field name="N_AF_Net_A_Payer"/>
+					    </tree>
+                                </field>
+					  <field name="cnss_lines2" colspan="4" nolabel="1" readonly="1">
+					  <tree string="LIGNES A01" > 
+                     <field name="N_Num_AffilieA01" />						 
+                     <field name="L_Raison_Sociale" />	
+					 <field name="L_Activite" /> 
+					 <field name="L_Adresse" />
+					 <field name="L_Ville" />
+					 <field name="C_Code_Agence" /> 
+					 <field name="D_Date_Emission" />
+					 <field name="D_Date_Exig" />
+					 
+           
+                                    </tree>
+                                </field>
+								
+					<field name="cnss_lines3" colspan="4" nolabel="1" readonly="1">
+					  <tree string="LIGNES A03" > 
+                     <field name="N_Nbr_Salaries" />						 
+                     <field name="N_T_Enfants" />	
+					 <field name="N_T_AF_A_Payer" /> 
+					 <field name="N_T_AF_A_Deduire" />
+					 <field name="N_T_AF_Net_A_Paye" />
+					 <field name="N_T_Num_Imma" /> 
+                                    </tree>
+                                </field>			
+                            </page>
+                            <page string="Notes importantes">
+							 <div style="font-size:140%; color: red ;font-family: Fantasy;">
+                                       <center> Assurez vous bien du mois à déclarer. Il doit correspondre au mois de la paie !</center>
+									</div>	
+                                <group col="4">
+                                  
+								    
+								  
+                               <div style="font-size:90%">
+							   
+                                        Une télédéclaration concerne un et un seul affilié et une période.<br/>
+										- Les déclarations se font par période (mensuellement).  <br/>
+										- Le portail ne gère pas l’ordre chronologique des déclarations par période :<br/>
+										- L’affilié ne peut déclarer pour une période que si le préétabli de cette période est disponible sur le portail.<br/> 
+										En règle générale, le préétabli d’une période relative à un mois X est disponible à partir du 15 du mois X.<br/>
+                                        Toutefois, la pratique a montré que les déclarations d’un mois X ne seront transmis es par les affiliés qu’à partir du 1 du mois suivant (X+1).<br/>
+                                       
+                                        - L’affilié peut déclarer pour une période antérieure à la période relative à la date en cours (déclaration de Janvier 2021 en Mars 2021).<br/>
+                                        - L affilié peut déclarer pendant une période, alors que les périodes antérieures n’ont pas été transmises à la CNSS .<br/>  Exemple : la déclaration du mois de février peut être
+                                        transmise sans que la déclaration du mois de janvier ne soit encore transmise (non déposée, en préparation, en validation)</div>	
+							   
+                              
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_cnss_form" model="ir.actions.act_window">
+            <field name="name">Traitement du fichier préétabli Damancom</field>
+			<field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.cnss</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="hr_cnss_tree_view"/>
+       
+
+        </record>
+
+        <menuitem
+            id="cnss_menu_view"
+            name="Etape 1 - Import du fichier préétabli Damancom"
+            action="action_cnss_form"
+            parent="hr_payroll_ma_pro.menu_hr_payslip_reports"
+            sequence="1"
+        />
+    </data>
+</odoo>

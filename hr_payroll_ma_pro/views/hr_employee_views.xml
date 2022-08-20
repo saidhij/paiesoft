@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<data>
+
+<record id="hr_employee_form_l10n_ma_payroll" model="ir.ui.view">
+            <field name="name">hr.employee.form.l10n.ma_payroll</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+
+		    <xpath expr="//field[@name='name']" position="before">
+                         <group>
+                             <field name="last_name"/> 
+							 <field name="first_name"/>
+                             <field name="code2"/> 
+                    </group>
+					</xpath>
+					<xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="placeholder">Prénom et Nom</attribute>
+                </xpath>
+				 
+				 <xpath expr="//field[@name='job_id']" position="after">
+                 <field name="diplome" string="Type de diplôme"/>
+                 </xpath>
+
+                    <xpath expr="//field[@name='birthday']" position="after">
+                        <field name="age"/>
+					   <field name="titre"/>
+                    </xpath> 
+
+				 <xpath expr="//field[@name='identification_id']" position="replace">
+                 <field name="cin" string="N de Carte Nationale CIN"/>
+                 </xpath> 
+				 <data>
+		
+				<notebook>
+				<page string="Num.d'affiliation" groups="hr.group_hr_user">
+				
+                     <group colspan="4" col="3"> 
+				
+                   
+				   <field name="matricule_cnss"/>
+				   <field name="numppr"/>
+				   <field name="numcee"/>			   
+				   <field name="ifu"/> 
+	
+				    </group> 
+							  				
+                            </page>
+							</notebook>
+							
+					<notebook>
+
+							</notebook>	
+<notebook>
+				<page string="Avance sur salaire du mois">
+                    <group colspan="4" col="3">
+					<field name="avance" string="Avance sur salaire"  />
+					</group>
+			  				
+                </page>
+				<page string="Gestion de présence du mois">
+				 <separator string="---- Import de fichier xls ou saisie manuelle ----" style="color: black"/><separator/>
+			
+				 <separator string="-----Mode de présence-----" style="color: black"/><separator/>
+                    <group colspan="4" col="4">
+					<field name="presence_impor"/>
+					</group>
+					
+					
+					<separator string="----- Présence du mois -----" style="color: black" attrs="{'invisible': [('presence_impor', '=', True)]}"/><separator/>
+					
+					  <group colspan="4" col="4" attrs="{'invisible': [('presence_impor', '=', True)]}">
+					<field name="jrs_trav_cemois"/>
+					<field name="hrs_trav_cemois"/>
+					</group>
+					<separator string="----- Horaire sup du mois -----" style="color: black"/><separator/>
+					 <group colspan="4" col="4">
+					<field name="heure_25"/>
+					<field name="heure_50"/>					
+					<field name="heure_100"/>						
+					</group>
+					 <separator string="----- Horaire légal -----" style="color: red"/><separator/>
+                    <group colspan="4" col="4">
+					  <field name="jours_t_an"/> 
+					  <field name="heures_t"/>
+					<field name="jours_t"/>
+					
+					
+					
+					</group>
+					
+                </page>				
+							
+							
+			</notebook>								
+						
+			</data>
+				
+			</field>
+		</record>
+		
+	
+
+</data></odoo>
+
