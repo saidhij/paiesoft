@@ -24,14 +24,14 @@
     'author': 'paiesoft',
     'website': 'https://paieafricaine.online',
 
-    'version': '1.14Basic',
+    'version': '1.14',
     'depends': ['hr_payroll'],
     
 	
-    'description': """Paie Marocaine sous Odoo. Version Basique gratuite - Entreprise SH
+    'description': """Paie Marocaine sous Odoo. Version Payante - Entreprise SH
 ======================
 
-    - Version gratuite de test
+
     - La version Pro est complète avec états CNSS,CIMR ,Etat 9421,et bulletin de paie bien élaboré.
 
     """,
