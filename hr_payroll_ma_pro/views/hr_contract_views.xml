@@ -33,6 +33,7 @@
 				 
 				<xpath expr="//field[@name='wage']" position="replace">
 			 <field name="mode_pay" invisible="1"/>
+				 <field name="wage_type" invisible="1"/>	
 				<field  name="wage" string="Salaire de base mensuel " attrs="{'invisible': [('mode_pay', '!=', 'monthly')]}"/>
 				<field  name="wageh" string="Salaire de base horaire " attrs="{'invisible': [('mode_pay', '!=', 'hourly')]}"/></xpath>
 		
