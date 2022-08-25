@@ -37,8 +37,7 @@
     """,
     'data': [
         'data/l10n_ma_hr_payroll_data.xml',
-        'data/hr_module_sequence.xml',	
-        'data/damancom_sequence.xml',			
+        'data/hr_module_sequence.xml',				
         'data/report_paperformat.xml',		
         'data/l10n_ma_hr_payroll_data_employe.xml',
         'security/ir.model.access.csv', 		
