@@ -48,10 +48,7 @@
         'views/hr_payslip_view.xml',	    
         'views/l10n_ma_hr_payroll_report.xml',
         'views/report_l10n_ma_fiche_paye.xml',	
-        'views/cnss_ds_report.xml',		
-        'views/cnam_view.xml',	
-        'views/cnss_view.xml',
-        'views/dsb2_view.xml',			
+		
     ],
 	 'installable': True,
      "images":['static/description/Banner.png'],
