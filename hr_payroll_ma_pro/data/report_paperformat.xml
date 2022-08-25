@@ -17,12 +17,7 @@
     <field name="dpi">130</field>
         </record>
    
-           <menuitem
-                name="Déclarations"
-                id="menu_hr_payslip_reports"
-                parent="hr_payroll.menu_hr_payroll_root"
-                groups="hr_payroll.group_hr_payroll_user"
-                sequence="95"/>
+      
    
    
 </odoo>
