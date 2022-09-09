@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="seq_hr_cnam" model="ir.sequence">
+            <field name="name">Déclaration</field>
+            <field name="code">hr.cnam</field>
+            <field name="prefix">DEC N°</field>
+            <field name="padding">4</field>
+        </record>
+		
+		
+		    <record id="seq_hr_cnss" model="ir.sequence">
+            <field name="name">Déclaration</field>
+            <field name="code">hr.cnss</field>
+            <field name="prefix">Déclaration du: %(month)s/%(year)s - N°</field>
+            <field name="padding">4</field>
+        </record>
+		
+				
+		    <record id="seq_hr_ds" model="ir.sequence">
+            <field name="name">DS PARTIE B2</field>
+            <field name="code">damancom.dsbtwo</field>
+            <field name="prefix">DS N°</field>
+            <field name="padding">4</field>
+        </record>
+		
+	
+		
+
+    </data>
+</odoo>
