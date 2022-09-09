@@ -24,7 +24,7 @@
     'author': 'paiesoft',
     'website': 'https://paieafricaine.online',
 
-    'version': '1.14Basic',
+    'version': '1.15Basic',
     'depends': ['hr_payroll'],
     
 	
